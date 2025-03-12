@@ -74,13 +74,5 @@ public class Poke {
             System.out.println("No se encontraron Pokémon con esa habilidad.");
         }
     }
-    
-    // Métodos para verificar si hay Pokémon registrados o en la colección
-    public int getUserCollectionSize() {
-        return userCollection.size();
-    }
-    
-    public int getPokemonMapSize() {
-        return pokemonMap.size();
-    }
 }
+
