@@ -1,0 +1,5 @@
+Se utilizó HashMap<String, Pokemon> para almacenar los Pokémon registrados porque permite una búsqueda rápida usando el nombre como clave, lo que hace que encontrar, agregar o eliminar un Pokémon sea muy eficiente. A diferencia de una lista, no es necesario recorrer todos los elementos para encontrar un Pokémon, lo que ahorra tiempo.
+
+Para la colección del usuario, se eligió ArrayList<String>, ya que permite almacenar los nombres de los Pokémon agregados en el orden en que fueron añadidos. Es fácil de manejar y permite recorrer la colección sin complicaciones. Aunque no es la estructura más rápida para buscar un elemento, funciona bien porque la cantidad de Pokémon en la colección del usuario suele ser pequeña.
+
+Se descartaron opciones como TreeMap, que ordena automáticamente los Pokémon pero haría las búsquedas más lentas, y HashSet, que evitaría duplicados pero no mantendría el orden de inserción. Por eso, la combinación de HashMap y ArrayList ofrece un buen equilibrio entre rapidez y facilidad de uso.
