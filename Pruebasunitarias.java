@@ -1,25 +1,26 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PokeTest {
-    private Poke manager;
+public class PokeTest {
 
-    @BeforeEach
-    void setUp() {
-        manager = new Poke(); // Se ejecuta antes de cada prueba
+    @Test
+    public void testRegisterPokemon() {
+        Poke manager = new Poke();
+        manager.registerPokemon("Pikachu", "Eléctrico", "Static");
+
+        // Verificar que Pikachu fue agregado correctamente
+        assertNotNull(manager.getPokemonMap().get("Pikachu"));
+        assertEquals("Eléctrico", manager.getPokemonMap().get("Pikachu").getType1());
+        assertEquals("Static", manager.getPokemonMap().get("Pikachu").getAbility());
     }
 
     @Test
-    void testRegisterPokemon() {
-        manager.registerPokemon("Bulbasaur", "Planta", "Espesura");
-        assertEquals(1, manager.getPokemonMapSize(), "El Pokémon debería haberse registrado.");
-    }
-
-    @Test
-    void testAddPokemonToCollection() {
-        manager.registerPokemon("Charmander", "Fuego", "Mar de llamas");
+    public void testAddPokemonToCollection() {
+        Poke manager = new Poke();
+        manager.registerPokemon("Charmander", "Fuego", "Blaze");
         manager.addPokemonToCollection("Charmander");
-        assertEquals(1, manager.getUserCollectionSize(), "El Pokémon debería estar en la colección.");
+
+        // Verificar que Charmander está en la colección del usuario
+        assertTrue(manager.getUserCollection().contains("Charmander"));
     }
 }
